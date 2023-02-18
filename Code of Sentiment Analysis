@@ -1,0 +1,22 @@
+!pip install newspaper3k
+from textblob import TextBlob
+import nltk
+from newspaper import Article
+article.download()
+article.parse()
+nltk.download('punkt')
+article.nlp()
+#Get the summary of the article
+text = article.summary
+#print the text
+print(text)
+# create a text blob object
+obj = TextBlob(text)
+sentiment = obj.sentiment.polarity
+print(sentiment)
+if sentiment == 0:
+    print('the text is neutral')
+elif sentiment > 0:
+    print('the text is positive')
+else:
+    print('the text is negetive')
